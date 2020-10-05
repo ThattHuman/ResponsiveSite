@@ -73,6 +73,7 @@ header
 {
 	display: block;
 	float: left;
+	margin-left: 10px;
 }
 
 .logo span
@@ -402,6 +403,13 @@ footer
 	header 
 	{
 		padding: 10px 0;
+	}
+	.container
+	{
+		display: block;
+		margin: 0 auto;
+		width: 100%;
+		padding: 0 15px;
 	}
 	/* скрываем верхнее меню, отменяем обтекание, позиционируем его, сместив на высоту шапки сайта */ 
 	#menu 

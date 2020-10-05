@@ -38,7 +38,7 @@ body
 	font-size: 16px;
 	line-height: 1;
 	color: black;
-	background: #f7f7f7
+	background: #e8eddf
 }
 /* очистка потока для всех контейнеров, внутри которых задано обтекание дочерних элементов */
 header:after, .container:after, footer:after, .widget-posts-list li:after, #subscribe:after
@@ -89,10 +89,10 @@ header
 }
 /* цветные круги */
 .logo span:nth-child(odd) {
-background: #EF5A42;
+background: #a5ffd6;
 }
 .logo span:nth-child(even) {
-background: #F8B763;
+background: #84dcc6;
 }
 /* меню */
 #menu
@@ -115,7 +115,7 @@ background: #F8B763;
 }
 #menu a:hover
 {
-	color: #EF5A42;
+	color: #a5ffd6;
 }
 /* кнопка переключения меню, появляющаяся при ширине 768px */
 .nav-toggle
@@ -126,7 +126,7 @@ background: #F8B763;
 	width: 40px;
 	height: 40px;
 	margin-left: 20px;
-	background: #EF5A42;
+	background: #a5ffd6;
 	cursor: pointer;
 }
 .nav-toggle span
@@ -193,7 +193,7 @@ background: #F8B763;
 }
 .category a
 {
-	color: #F8B763;
+	color: #333533;
 	text-transform: uppercase;
 }
 .post-title
@@ -251,7 +251,7 @@ background: #F8B763;
 {
 	display: inline-block;
 	margin-left: 8px;
-	color: #F8B763;
+	color: #333533;
 	width: 25px;
 	height: 25px;
 	line-height: 23px;
@@ -282,8 +282,8 @@ aside
 	padding: 10px;
 	margin-bottom: 20px;
 	text-align: center;
-	border: 2px solid #F8B763;
-	box-shadow: 3px 3px 0 0 #F8B763;
+	border: 2px solid #333533;
+	box-shadow: 3px 3px 0 0 #333533;
 }
 .widget-category-list li
 {
@@ -352,12 +352,12 @@ border-bottom: none;
 	border: none;
 	position: absolute;
 	right: 0;
-	color: #EF5A42;
+	color: #a5ffd6;
 	cursor: pointer;
 	font-size: 18px;
 }
 #subscribe input:focus + button {
-background: #EF5A42;
+background: #a5ffd6;
 color: white;
 }
 

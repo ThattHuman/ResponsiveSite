@@ -78,15 +78,20 @@ header
 
 .logo span
 {
-	color: blue;
+	color: black;
 	display: inline-block;
 	width: 30px;
 	height: 30px;
 	line-height: 30px;	
 	border-radius: 50%;
 	margin: 5px, 0;
+	text-decoration: none;
 	text-align: center;
 	text-shadow: 2px 2px 1px rgba(0,0,0,.4);
+}
+.logo span:hover
+{
+	color: #a5ffd6;
 }
 /* цветные круги */
 .logo span:nth-child(odd) {
@@ -321,7 +326,7 @@ border-bottom: none;
 }
 .post-image-small
 {
-	width: 30%;
+	width: 100%;
 	float: left;
 	margin-right: 15px;
 }
@@ -439,6 +444,16 @@ footer
 	{
 		width: 100%;
 		float: none;
+	}
+	.post
+	{
+		margin-right: 0;
+	}
+	.post-image-small
+	{
+		width: 30%;
+		float: left;
+		margin-right: 15px;
 	}
 	.widget-post-title 
 	{

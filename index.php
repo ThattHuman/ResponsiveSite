@@ -13,7 +13,7 @@
 </head>
 <body>
 	<?
-		include 'components/header.php';
+		include 'pages/components/header.php';
 	?>
 	<div class="container">
 		<div class="posts-list">
@@ -102,7 +102,7 @@
 		</aside>
 	</div>
 	<?
-		include 'components/footer.php'
+		include 'pages/components/footer.php'
 	?>
 	<script>
 		$('.nav-toggle').on('click', function () {

@@ -98,3 +98,23 @@ aside {
     background: #a5ffd6;
     color: white;
 }
+
+/* ADAPT */
+
+@media (max-width: 768px) 
+{
+	aside{
+        padding: 0;
+    }
+	.widget-post-title 
+	{
+		font-size: 1.5em;
+	}
+}
+@media (max-width: 480px) 
+{
+    .widget-post-title 
+	{
+		font-size: 1.2em;
+	}
+}

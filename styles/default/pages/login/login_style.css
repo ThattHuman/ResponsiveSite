@@ -5,9 +5,10 @@
 /* PAGE */
 @import url('../../pages/login/content_style.css');
 /* ADAPTABILITY */
+@import url('../../components/adapt_components_media.css');
 @import url('../../pages/login/adapt_media.css');
 
-@media (min-width: 768px)
+@media (min-width: 480px)
 {
     .container{
         display: grid;

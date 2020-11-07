@@ -1,0 +1,15 @@
+@media (max-width: 480px) 
+{
+    .tabcontent p{
+        font-size: 14pt;
+    }
+    .tabcontent input{
+        font-size: 14pt;
+    }
+    .tabcontent input[type="submit"]{
+        font-size: 12pt;
+    }
+    .tab button {
+        font-size: 12pt;
+    }
+}

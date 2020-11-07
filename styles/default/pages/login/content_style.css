@@ -6,6 +6,7 @@
 
     display: grid;
     grid-template-areas: "login register";
+    grid-template-columns: 1fr 1fr;
 }
 
 /* Style the buttons that are used to open the tab content */
@@ -60,6 +61,10 @@
 .tabcontent input{
     font-size: 16pt;
     padding: 5px;
+}
+
+.tabcontent input:focus{
+    border-color: #84dcc6   ;
 }
 
 .tabcontent input[type="submit"]{

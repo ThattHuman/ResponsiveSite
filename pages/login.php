@@ -45,11 +45,24 @@
 			</div>
 			<div id="login_tab" class="tabcontent">
 				<form>
+					<p>Логин</p>
+					<textarea></textarea>
+					<p>Пароль</p>
+					<textarea></textarea>
+					<button type="submit"></button>
+				</form>
 			</div>
 
 			<div id="reg_tab" class="tabcontent">
-				<h3>Здесь</h3>
-				<p>Будет регистрация</p>
+			<form>
+				<p>Имя</p>
+				<textarea></textarea>
+				<p>Логин</p>
+				<textarea></textarea>
+				<p>Пароль</p>
+				<textarea></textarea>
+				<button type="submit"></button>
+			</form>
 			</div>
 		</div>
 		<?

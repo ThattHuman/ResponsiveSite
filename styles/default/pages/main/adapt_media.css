@@ -1,0 +1,118 @@
+@media (max-width: 768px) 
+{
+	/* показываем кнопку для переключения верхней навигации */
+	.nav-toggle 
+	{
+        grid-area: menu;
+        margin: 0 20px 0 0;
+		display: flex;
+	}
+	/* скрываем верхнее меню, отменяем обтекание, позиционируем его, сместив на высоту шапки сайта */ 
+	#menu 
+	{
+		max-height: 0;
+		background: white;
+		position: absolute;
+		overflow: hidden;
+		top: 63px;
+		right: 0;
+		left: 0;
+		margin: 0;
+		padding: 0;
+		z-index: 3;
+	}
+	/* делаем элементы списка блочными, чтобы они располагались друг под другом */
+	#menu li 
+	{
+        display: flex;
+        flex-direction: column;
+		text-align: center;
+		border-bottom: 1px solid #EBEBE3;
+		
+    }
+    .container
+	{
+        display: grid;
+        grid-template-areas:    ". posts ."
+                                ". aside .";
+        grid-template-columns: 5% 1fr 5%;
+        grid-template-rows: auto auto;
+	}
+    /* отменяем обтекание левой и правой колонок, устанавливаем им ширину 100%*/
+    .posts-list{
+        padding: 0;
+    }
+	.post
+	{
+		margin: 0 0 30px 0;
+    }
+    aside{
+        padding: 0;
+    }
+	.widget-post-title 
+	{
+		font-size: 1.5em;
+	}
+}
+@media (max-width: 480px) 
+{
+    header{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .logo{
+        margin: 0;
+    }
+	/* отменяем обтекание для логотипа и выравниваем по центру*/
+	.logo span {
+		margin: 0 2px;
+    }
+    .nav-toggle 
+	{
+        margin: 10px 0 0 0;
+	}
+	/* позиционируем меню на увеличившуюся высоту шапки */
+	#menu 
+	{
+		top: 100px;
+	}
+	/* позиционируем форму поиска по левому краю */
+	#searchform 
+	{
+		float: left;
+		margin-left: 0;
+	}
+	/* убираем верхнюю и нижнюю границы и выравниваем кнопку по центру */
+	.post-footer 
+	{
+		border-top: none;
+		border-bottom: none;
+		text-align: center;
+	}
+	/* отменяем позиционирование кнопок соцсетей */
+	.post-social 
+	{
+		position: static;
+		text-align: center;
+		transform: none;
+		margin-top: 20px;
+	}
+	.widget-post-title 
+	{
+		font-size: 1.2em;
+	}
+	/* отменяем обтекание для столбцов подвала страницы */
+	.footer-col 
+	{
+		float: none;
+		margin-bottom: 20px;
+		width: 100%;
+		text-align: center;
+	}
+	.footer-col:last-child 
+	{
+		text-align: center;
+		margin-bottom: 0;
+	}
+}

@@ -1,0 +1,21 @@
+/* COMPONENTS */
+@import url('../../components/common_style.css');
+@import url('../../components/header_style.css');
+@import url('../../components/footer_style.css');
+/* PAGE */
+@import url('../../pages/login/content_style.css');
+/* ADAPTABILITY */
+@import url('../../pages/login/adapt_media.css');
+
+@media (min-width: 768px)
+{
+    .container{
+        display: grid;
+        grid-template-areas:    ". . ."
+                                ". tabs ."
+                                ". form ."
+                                ". . .";
+        grid-template-columns: 10% 1fr 10%;
+        grid-template-rows: 1% 50px auto 1fr;
+    }
+}

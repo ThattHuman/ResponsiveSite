@@ -1,0 +1,102 @@
+/*левый контейнер */
+.posts-list {
+    grid-area: posts;
+    /* background: red; */
+
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px 0 0;
+}
+/* блок для статей */
+.post
+{
+    background: #F5F8EF;
+    border-radius: 1%;
+    margin: 0 0 30px 0;
+    box-shadow: 3px 3px 1px rgba(0,0,0,.05);
+}
+.post-content
+{
+    padding: 10px;
+}
+.post-content p
+{
+    line-height: 1.5;
+    padding-bottom: 1em;
+}
+.post-image
+{
+    margin: 0 0 30px 0;
+    padding: 5px;
+}
+.category
+{
+    margin: 0 0 15px 0;
+}
+.category a
+{
+	color: #333533;
+	text-transform: uppercase;
+}
+.post-title
+{
+    margin: 0 0 12px 0;
+	font-size: 26px;
+}
+/* блок с кнопкой "продолжить чтение" и кнопками социальных сетей */
+.post-footer
+{
+	border-top: 1px solid #EBEBE3;
+	border-bottom: 1px solid #EBEBE3;
+	position: relative;
+}
+.more-link
+{
+	position: relative;
+	display: inline-block;
+	font-size: 10px;
+	text-transform: uppercase;
+	color: white;
+	line-height: 44px;
+	padding: 0 22px;
+	background: #3C3D41;
+	letter-spacing: 0.1em;
+	
+}
+.more-link:after	/* делает классную стрелочку */
+{
+	content: '';
+	display: block;
+	position: absolute;
+	width: 0;
+	height: 0;
+	top: 0;
+	right: 0;
+	border: solid transparent;
+	border-width: 22px 18px;
+	border-left-color: #3C3D41;
+	transform: translateX(100%); 
+}
+.post-social
+{
+	position: absolute;
+	left: auto;
+	top: 50%;
+	right: 0;
+	text-align: right;
+	transform: translateY(-50%);
+	padding: 0;
+	font-size: 12px;
+}
+.post-social a
+{
+	display: inline-block;
+	margin-left: 8px;
+	color: #333533;
+	width: 25px;
+	height: 25px;
+	line-height: 23px;
+	text-align: center;
+	border-radius: 50%;
+	border: 1px solid;
+}

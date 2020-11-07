@@ -1,0 +1,18 @@
+/* COMPONENTS */
+@import url('../../components/common_style.css');
+@import url('../../components/header_style.css');
+@import url('../../components/footer_style.css');
+/* PAGE */
+@import url('../../pages/main/posts_style.css');
+@import url('../../pages/main/aside_style.css');
+/* ADAPTABILITY */
+@import url('../../pages/main/adapt_media.css');
+
+@media (min-width: 768px) 
+{
+    .container{
+        display: grid;
+        grid-template-areas: ". posts aside .";
+        grid-template-columns: 10% 1fr 0.5fr 10%;
+    }
+}

@@ -1,0 +1,105 @@
+header {
+	grid-area: header;
+    background: white;
+    display: grid;
+    grid-template-areas: "logo . menu";
+    grid-template-columns: auto 1fr auto;
+    padding: 15px 5px;
+}
+/* >> LOGO << */
+.logo
+{
+    grid-area: logo;
+	margin-left: 25px;
+}
+
+.logo span
+{
+	color: black;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;	
+	border-radius: 50%;
+	text-decoration: none;
+	text-align: center;
+	text-shadow: 2px 2px 1px rgba(0,0,0,.4);
+}
+.logo span:hover
+{
+	color: #a5ffd6;
+}
+/* color circles */
+.logo span:nth-child(odd) {
+background: #a5ffd6;
+}
+.logo span:nth-child(even) {
+background: #84dcc6;
+}
+/* >> MENU << */
+#menu
+{
+    grid-area: menu;
+}
+#menu li
+{
+	display: inline-block;
+	margin-right: 30px;
+}
+#menu a
+{
+	color: #111;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 600;
+	line-height: 40px;
+}
+#menu a:hover
+{
+	color: #a5ffd6;
+}
+/* >> TOGGLE BUTTON 768px << */
+.nav-toggle
+{
+	display: none;
+	position: relative;
+	float: right;
+	width: 40px;
+	height: 40px;
+	margin-left: 20px;
+	background: #a5ffd6;
+	cursor: pointer;
+}
+.nav-toggle span
+{
+	display: block;
+	position: absolute;
+	top: 19px;
+	left: 8px;
+	right: 8px;
+	height: 2px;
+	background: white;
+}
+.nav-toggle span:before, .nav-toggle span:after
+{
+	content: "";
+	position: absolute;
+	display: block;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background: white;
+}  
+.nav-toggle span:before
+{
+	top: -10px;
+}
+.nav-toggle span:after
+{
+	bottom: -10px;
+}
+/* класс, который будет добавлен в верхнему меню при нажатии на кнопку и покажет скрытое меню*/
+#menu.active
+{
+	max-height: 123px;
+}

@@ -6,7 +6,7 @@
 	<title>Адаптивная вёрстка сайта</title>
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700,700italic|Playfair+Display:400,700&subset=latin,cyrillic">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css">
-	<link rel="stylesheet" type="text/css" href="styles/login_style.css">
+	<link rel="stylesheet" type="text/css" href="../styles/default/pages/login/login_style.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 	<script type="text/javascript">
@@ -27,52 +27,53 @@
 			}
 
 			// Show the current tab, and add an "active" class to the button that opened the tab
-			document.getElementById(tabName).style.display = "block";
+			document.getElementById(tabName).style.display = "flex";
 			evt.currentTarget.className += " active";
 		}
 	</script>
 	<title>Login</title>
 </head>
 <body>
-	<div class="wrapper">
-		<?
-			include 'components/header.php';
-		?>
-		<div class="container">
-			<div class="tab">
-				<button class="tablinks" onclick="openTab(event, 'login_tab')">Login</button>
-				<button class="tablinks" onclick="openTab(event, 'reg_tab')">Register</button>
-			</div>
-			<div id="login_tab" class="tabcontent">
-				<form>
-					<p>Логин</p>
-					<textarea></textarea>
-					<p>Пароль</p>
-					<textarea></textarea>
-					<button type="submit"></button>
-				</form>
-			</div>
-
-			<div id="reg_tab" class="tabcontent">
+	<?
+		include 'components/header.php';
+	?>
+	<div class="container">
+		<div class="tab">
+			<button id="login_button" class="tablinks active" onclick="openTab(event, 'login_tab')">Войти</button>
+			<button id="reg_button" class="tablinks" onclick="openTab(event, 'reg_tab')">Зарегистрироваться</button>
+		</div>
+		<div id="login_tab" class="tabcontent">
+			<form>
+				<p>Логин</p>
+				<p><input type="text"/></p>
+				<p>Пароль</p>
+				<p><input type="password"/></p>
+				<p class="submit_button">
+					<input type="submit" value="Войти"/>
+				</p>
+			</form>
+		</div>
+		<div id="reg_tab" class="tabcontent">
 			<form>
 				<p>Имя</p>
-				<textarea></textarea>
+				<p><input type="text"/></p>
 				<p>Логин</p>
-				<textarea></textarea>
+				<p><input type="text"/></p>
 				<p>Пароль</p>
-				<textarea></textarea>
-				<button type="submit"></button>
+				<p><input type="password"/></p>
+				<p class="submit_button">
+					<input type="submit" value="Зарегистрироваться"/>
+				</p>
 			</form>
-			</div>
 		</div>
-		<?
-			include 'components/footer.php'
-		?>
-		<script>
-			$('.nav-toggle').on('click', function () {
-				$('#menu').toggleClass('active');
-			});
-		</script>
 	</div>
+	<?
+		include 'components/footer.php'
+	?>
+	<script>
+		$('.nav-toggle').on('click', function () {
+			$('#menu').toggleClass('active');
+		});
+	</script>
 </body>
 </html>

@@ -4,8 +4,8 @@ abstract class Api
 	public $apiName = '';
 	protected $method = '';
 
-	public $requestUri = [];
-	public $requestParams = [];
+	public $requestUri = array();
+	public $requestParams = array();
 
 	protected $action = '';
 
@@ -15,29 +15,29 @@ abstract class Api
         header("Access-Control-Allow-Methods: *");
         header("Content-Type: application/json");
 
-		// ìàññèâ GET ïàðàìåòðîâ
+		// //ÐœÐ°ÑÑÐ¸Ð² GET Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð¾Ð² Ñ€Ð°Ð·Ð´ÐµÐ»ÐµÐ½Ð½Ñ‹Ñ… ÑÐ»ÐµÑˆÐµÐ¼
 		$this->requestUri = explode('/', trim($_SERVER['REQUEST_URI'], '/'));
 		$this->requestParams = $_REQUEST;
 
-		// îïðåäåëåíèå ìåòîäà çàïðîñà
+		// ÐžÐ¿Ñ€ÐµÐ´ÐµÐ»ÐµÐ½Ð¸Ðµ Ð¼ÐµÑ‚Ð¾Ð´Ð° Ð·Ð°Ð¿Ñ€Ð¾ÑÐ°
 		$this->method = $_SERVER['REQUEST_METHOD'];
 		if($this0>method == 'POST' && array_key_exists('HTTP_X_HTTP_METHOD', $_SERVER))
 		{
 			if($_SERVER['HTTP_X_HTTP_METHOD'] == 'DELETE')
 				$this->method = 'DELETE';
 			elseif ($_SERVER['HTTP_X_HTTP_METHOD'] == 'PUT')
-				$this->method = 'PUT'
+				$this->method = 'PUT';
 			else
-				throw new Exception("Unexpected Header")
+				throw new Exception("Unexpected Header");
 		}
 	}
 
 	public function run()
 	{
-		// ïåðâûå 2 ýëåìåíòà ìàññèâà URI äîëæíû áûòü "api" è íàçâàíèå
+		//ÐŸÐµÑ€Ð²Ñ‹Ðµ 2 ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð° Ð¼Ð°ÑÑÐ¸Ð²Ð° URI Ð´Ð¾Ð»Ð¶Ð½Ñ‹ Ð±Ñ‹Ñ‚ÑŒ "api" Ð¸ Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ Ñ‚Ð°Ð±Ð»Ð¸Ñ†Ñ‹
 		if(array_shift($this->requestUri) !== 'api' || array_shift($this->requestUri) !== $this->apiName)
 			throw new RuntimeException('API Not Found', 404);
-		//îïðåäåëåíèå äåéñòâèÿ äëÿ îáðàáîòêè
+		//ÐžÐ¿Ñ€ÐµÐ´ÐµÐ»ÐµÐ½Ð¸Ðµ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ñ Ð´Ð»Ñ Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚ÐºÐ¸
 		$this->action = $this->getAction();
 
 		if(method_exists($this, $this->action)) 
@@ -86,41 +86,13 @@ abstract class Api
                 break;
             default:
                 return null;
-        }
-
-		abstract protected function indexAction();
-		abstract protected function viewAction();
-		abstract protected function createAction();
-		abstract protected function updateAction();
-		abstract protected function deleteAction();
-    }
-}
-?>
-
-<?
-require_once 'Api.php';
-require_once 'Db.php';
-require_once 'Users.php';
-
-class UsersApi extends Api
-{
-	public $apiName = 'users';
-
-	/**
-     * Ìåòîä GET
-     * Âûâîä ñïèñêà âñåõ çàïèñåé
-     * http://ÄÎÌÅÍ/users
-     * @return string
-     */
-	public function indexAction()
-	{
-		$db = (new Db())->getConnect();
-		$users = Users::getAll($db);
-		if($users)
-		{
-			return $this->response($user, 200);
 		}
-		return $this->response('Data not found', 404); 
 	}
+
+	abstract protected function indexAction();
+	abstract protected function viewAction();
+	abstract protected function createAction();
+	abstract protected function updateAction();
+	abstract protected function deleteAction();
 }
 ?>

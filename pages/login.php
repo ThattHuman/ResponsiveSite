@@ -54,9 +54,9 @@
 			</form>
 		</div>
 		<div id="reg_tab" class="tabcontent">
-			<form>
+			<form action="/api/users" method="POST">
 				<p>Имя</p>
-				<p><input type="text"/></p>
+				<p><input type="text" name="name"/></p>
 				<p>Логин</p>
 				<p><input type="text"/></p>
 				<p>Пароль</p>

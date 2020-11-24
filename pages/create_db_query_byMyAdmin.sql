@@ -37,6 +37,7 @@ CREATE TABLE `api_db`.`Post` (
 ) ENGINE = InnoDB;
 ALTER TABLE `Post` ADD INDEX(`AuthorID`);
 ALTER TABLE `Post` ADD INDEX(`CategoryID`);
+ALTER TABLE `Post` ADD `Title` VARCHAR(100) NOT NULL AFTER `Picture`;
 
 CREATE TABLE `api_db`.`Comment` ( 
     `ID` INT NOT NULL AUTO_INCREMENT , 

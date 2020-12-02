@@ -16,6 +16,9 @@ CREATE TABLE `api_db`.`AccountInfo` (
     UNIQUE (`LoginDataID`), 
     UNIQUE (`Nickname`)
 ) ENGINE = InnoDB;
+ALTER TABLE `AccountInfo` ADD `RoleID` INT NOT NULL AFTER `RegistrationDate`;
+ALTER TABLE `AccountInfo` ADD INDEX(`RoleID`);
+ALTER TABLE `AccountInfo` ADD FOREIGN KEY (`RoleID`) REFERENCES `api_db`.`Role`(`ID`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 CREATE TABLE `api_db`.`Category` ( 
     `ID` INT NOT NULL AUTO_INCREMENT , 
@@ -49,6 +52,13 @@ CREATE TABLE `api_db`.`Comment` (
 ) ENGINE = InnoDB;
 ALTER TABLE `Comment` ADD INDEX(`AuthorID`);
 ALTER TABLE `Comment` ADD INDEX(`PostID`);
+
+CREATE TABLE `api_db`.`Role` ( 
+    `ID` INT NOT NULL AUTO_INCREMENT , 
+    `Name` VARCHAR(30) NOT NULL , 
+    PRIMARY KEY (`ID`), 
+    UNIQUE (`Name`)
+) ENGINE = InnoDB;
 
 ALTER TABLE `AccountInfo` ADD FOREIGN KEY (`LoginDataID`) REFERENCES `api_db`.`AccountLoginData`(`ID`) ON DELETE RESTRICT ON UPDATE CASCADE;
 ALTER TABLE `Post` ADD FOREIGN KEY (`AuthorID`) REFERENCES `api_db`.`AccountInfo`(`ID`) ON DELETE RESTRICT ON UPDATE CASCADE;

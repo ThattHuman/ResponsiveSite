@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,25 +44,25 @@
 			<button id="reg_button" class="tablinks" onclick="openTab(event, 'reg_tab')">Зарегистрироваться</button>
 		</div>
 		<div id="login_tab" class="tabcontent">
-			<form>
+			<form action="/pages/queries/login_query.php" method="POST">
 				<p>Логин</p>
-				<p><input type="text"/></p>
+				<p><input type="text" name="login"/></p>
 				<p>Пароль</p>
-				<p><input type="password"/></p>
+				<p><input type="password" name="password"/></p>
 				<p class="submit_button">
 					<input type="submit" value="Войти"/>
 				</p>
 			</form>
 		</div>
 		<div id="reg_tab" class="tabcontent">
-			<form action="/api/users" method="POST">
+			<form action="/pages/queries/register_query.php" method="POST">
 				<p>Имя</p>
 				<p><input type="text" name="name"/></p>
 				<p>Логин</p>
-				<p><input type="text"/></p>
+				<p><input type="text" name="login"/></p>
 				<p>Пароль</p>
-				<p><input type="password"/></p>
-				<p class="submit_button">
+				<p><input type="password" name="password"/></p>
+				<p class="submit_button"> 
 					<input type="submit" value="Зарегистрироваться"/>
 				</p>
 			</form>

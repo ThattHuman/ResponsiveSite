@@ -9,13 +9,12 @@
 			<div class="nav-toggle"><span></span></div>
 			<ul id="menu">
 				<li><a href="../index.php">Главная</a></li>
-				<li><a href="">Об авторе</a></li>
-				<li><a href="">Контакты</a></li>';
+				<li><a href="contacts.php">Контакты</a></li>';
 				if(!$_SESSION['AccountID'])
 					echo '<li><a href="/pages/login.php">Войти</a></li>';
 				else
 				{
-					echo '<li><a href="">Профиль</a></li>
+					echo '<li><a href="/pages/profile.php">Профиль</a></li>
 							<li><a href="/pages/queries/accountquit_query.php">Выход</a></li>';
 				}
 	echo	'</ul>

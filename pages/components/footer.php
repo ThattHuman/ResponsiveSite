@@ -9,7 +9,7 @@
 				</div>
 			</div>
 			<div class="footer-col">
-				<a href="">Написать письмо</a>
+				<a href="new_post.php">Написать пост</a>
 			</div>
 		</footer>'
 ?>

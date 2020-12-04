@@ -1,0 +1,10 @@
+/* COMPONENTS */
+@import url('../../components/common_style.css');
+@import url('../../components/header_style.css');
+@import url('../../components/footer_style.css');
+@import url('../../components/aside_style.css');
+/* PAGE */
+@import url('../../pages/new_post/form_style.css');
+/* ADAPTABILITY */
+@import url('../../components/adapt_components_media.css');
+@import url('../../pages/new_post/adapt_media.css');

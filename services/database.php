@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     class Db
     {
         private $cServerAddress = 'localhost';
@@ -20,6 +22,33 @@
 
     class DbCommands
     {
+        private $db;
         
+        public function __construct()
+        {
+            $this->db = new Db;
+        }
+
+        public function GetProfileInfo($id)
+        {
+            $query = "SELECT `AccountInfo`.`FullName`, `AccountInfo`.`Nickname`, `AccountInfo`.`RegistrationDate`, `AccountLoginData`.`Login` FROM `AccountInfo` INNER JOIN `AccountLoginData` ON `AccountInfo`.`LoginDataID` = `AccountLoginData`.`ID` WHERE `AccountInfo`.`ID` = $id";
+            $result = $this->db->RunQuery($query);
+            $fetched = mysqli_fetch_array($result);
+            return $fetched;
+        }
+
+        public function GetCategories()
+        {
+            $query = "SELECT `ID`, `Name` FROM `Category`";
+            $result = $this->db->RunQuery($query);
+
+            while($row = $result->fetch_assoc())
+            {
+                $rows[] = $row;
+            }
+
+            //$fetched = mysqli_fetch_all($result);
+            return $rows;
+        }
     }
 ?>

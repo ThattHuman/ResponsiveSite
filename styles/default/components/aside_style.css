@@ -64,41 +64,20 @@ aside {
 	margin: 0 15px 15px 0;
 }
 /* >> SUBSCRIBE << */
-#subscribe
-{
+#new_post{
     position: relative;
 	padding: 15px 0;
+	display: flex;
 }
-#subscribe input
-{
-	width: 100%;
-	display: block;
-	float: left;
-	border: 2px solid #EBEBE3;
-	padding: 0 0 0 10px;
-	height: 40px;
-	position: relative;
-	outline: none;
-	color: #9E9C9C;
-	font-style: italic;
-}
-#subscribe button 
-{
-	padding: 0 15px;
-	background: transparent;
-	height: 40px;
+#new_post input[type=submit]{
+	background-color: lightgray;
 	border: none;
-	position: absolute;
-	right: 0;
-	color: #a5ffd6;
+	color: black;
+	padding: 16px 32px;
+	text-decoration: none;
+	width: 100%;
 	cursor: pointer;
-	font-size: 18px;
 }
-#subscribe input:focus + button {
-    background: #a5ffd6;
-    color: white;
-}
-
 /* ADAPT */
 
 @media (max-width: 768px) 

@@ -1,0 +1,92 @@
+.container{
+    display: grid;
+    grid-template-areas:    ". profile_information ."
+                            ". post_creation .";
+    grid-template-columns: auto 700px auto;
+    grid-template-rows: 400px auto;
+}
+
+.profile_info_section{
+    background: #F5F8EF;
+    grid-area: profile_information;
+    
+    display: grid;
+    grid-template-areas:    ". name name ."
+                            ". . . ."
+                            ". nickname nickname_value ."
+                            ". login login_value ."
+                            ". regdate regdate_value .";
+    grid-template-columns: 10px auto auto 10px;
+    grid-template-rows: 50px 50px 100px 100px 100px;
+    align-items: center;
+}
+
+.new_post_section{
+    grid-area: post_creation;
+
+    display: flex;
+}
+
+/* PROFILE INFO */
+
+.profile_name{
+    grid-area: name;
+    justify-self: center;
+    /*text-align: center;*/
+}
+
+.secondary_info{
+    font-size: 18;
+    display: flex;
+    padding-left: 50px;
+}
+
+#nickname{
+    grid-area: nickname;
+}
+
+#login{
+    grid-area: login;
+}
+
+#regdate{
+    grid-area: regdate;
+}
+
+#nickname_value{
+    grid-area: nickname_value;
+}
+
+#login_value{
+    grid-area: login_value;
+}
+
+#regdate_value{
+    grid-area: regdate_value;
+}
+
+/* NEW POST */
+
+.post_creation_header{
+    grid-area: header;
+}
+
+.category_select{
+    grid-area: category;
+}
+
+.post_creation_textzone{
+
+}
+
+#title_box{
+    grid-area: title;
+}
+
+#content_area{
+    grid-area: content;
+}
+
+#image_picker{
+    grid-area: photopicker;
+}
